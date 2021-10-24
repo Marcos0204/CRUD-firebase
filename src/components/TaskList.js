@@ -6,9 +6,9 @@ const TaskList = ({taskList}) => {
     return (
         <Container>
             <Stack>
-                {taskList.map(item => (
-                    <>
-                        <Row>
+                {taskList.map((item, index )=> (
+                    < >
+                        <Row key={index}>
                             <Col>{item.descripcion}</Col>
                             <Col>
                                 <Button>ver archivo</Button>
