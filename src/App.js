@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react';
+import Home from './components/Home';
+import Logueo from './components/Logueo';
 
 const App = () => {
+
+  const [ userGlobal, setUserGlobal ] = useState(null);
+
   return (
     <div>
-      <h1>app</h1>
+      {userGlobal ? <Home/> : <Logueo/>}
     </div>
   )
 }
