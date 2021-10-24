@@ -5,11 +5,15 @@ import firebaseApp from '../Credentials';
 import {
     getAuth,
     createUserWithEmailAndPassword,
-    signInWithEmailAndPassword
+    signInWithEmailAndPassword,
+    signInWithRedirect,
+    GoogleAuthProvider,
 
 } from 'firebase/auth';
 
 const auth = getAuth(firebaseApp);
+
+const googleAuthProvider = new GoogleAuthProvider(); 
 
 const Logueo = () => {
  
@@ -51,7 +55,12 @@ const Logueo = () => {
                     {iseRegister ? 'Rigistrate' : 'inicia sesion'}
                 </Button>
             </Form>
-            <Button variant="primary" type="submit" style={{ width: "300px" }}>
+            <Button
+                variant="primary"
+                type="submit"
+                style={{ width: "300px" }}
+                onClick={()=> signInWithRedirect(auth, googleAuthProvider)}
+            >
                 Acceder con Google
             </Button>
             <Button variant="secondary" onClick={() => SetIsRegister(!iseRegister)} style={{ width: "300px" }}>
