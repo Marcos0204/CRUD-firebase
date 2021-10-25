@@ -57,7 +57,11 @@ const Home = ({email}) => {
                 Cerrar Sesion
             </Button>
             <hr/>
-            <AddTask/>
+            <AddTask 
+                        taskList={task}
+                        email={email}
+                        setTask={setTask}
+                    /> 
             {task ? <TaskList 
                         taskList={task}
                         email={email}
