@@ -13,6 +13,7 @@ const App = () => {
 
   const [ userGlobal, setUserGlobal ] = useState(null);
 
+
   //funcion que se ejecutar al detectar autentificacion
   onAuthStateChanged(auth, (userAuth) =>{
     if(userAuth){
@@ -24,7 +25,7 @@ const App = () => {
 
   return (
     <div>
-      {userGlobal ? <Home/> : <Logueo/>}
+      {userGlobal ? <Home email={userGlobal.email}/> : <Logueo/>}
     </div>
   )
 }
